@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Java Final Project</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="form-container">
+    <div class="logo">
+        <img src="valencia-logo.png">
+    </div>
+    <h1 class="form-title">Valencia Lab Sign-In</h1>
+    <form th:action="confirm" th:object="${newSignIn}" th:method="post">
+        <div class="input-field">
+            <label for="first-name">First name</label>
+            <input type="text" placeholder="First Name" id="first-name" th:field="*{firstName}" required>
+        </div>
+
+        <div class="input-field">
+            <label for="last-name">Last name</label>
+            <input type="text" placeholder="Last Name" id="last-name" th:field="*{lastName}" required>
+        </div>
+
+        <div class="input-field">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Email" id="email" pattern="[.a-zA-Z0-9]*@mail.valenciacollege.edu"
+                   th:field="*{email}" required>
+        </div>
+
+        <div class="input-field">
+            <label for="course">Course</label>
+            <select id="course" class="dropdown" th:field="*{course}" required>
+                <option value="" hidden>Select a course</option>
+                <option value="COP2805C" th:value="COP2805C">COP-2805C</option>
+                <option value="COP2360C" th:value="COP2360C">COP-2360C</option>
+                <option value="CET1610C" th:value="CET1610C">CET-1610C</option>
+                <option value="CIS2910C" th:value="CIS2910C">CIS-2910C</option>
+                <option value="CGS2650C" th:value="CGS2650C">CGS-2650C</option>
+            </select>
+        </div>
+        <div class="submit-btn">
+            <button type="submit" onclick=alert("Welcome")>Submit</button>
+        </div>
+    </form>
+
+
+
+</div>
+
+</body>
+
+</html>
